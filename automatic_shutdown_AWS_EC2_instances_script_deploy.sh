@@ -4,13 +4,13 @@
 
 count=0
 
-process=$(top -bn 1 | sed 1,7d | grep $USER | awk '{print $2}' | uniq)
+process=$(top -bn 1 | sed 1,7d | grep $username | awk '{print $2}' | uniq)
 
 if [[ $process ]]
 then
 	((count+=1))
 fi
 
-login=$(who | awk '{print $1}' | grep $USER | uniq)
+login=$(who | awk '{print $1}' | grep $username | uniq)
 
 if [[ $count == 0 ]] && [[ -z $login ]]; then sudo shutdown now;  fi
