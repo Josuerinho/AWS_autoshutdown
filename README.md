@@ -8,9 +8,9 @@ The following code has to be added to the **Blank space** at the end of the **Ad
 #!/bin/bash
 
 ## script for autoshutdown
-## Change the USER variable content with whatever user you use. For admin AWS EC2, ubuntu is the default.
+## Change the username variable content with whatever user you use. For admin AWS EC2, ubuntu is the default.
 
-echo -e "USER=ubuntu\nSHELL=/bin/bash\n" >> /root/.bashrc
+echo -e "username=ubuntu\nSHELL=/bin/bash\n" >> /root/.bashrc
 source /root/.bashrc
 
 curl https://raw.githubusercontent.com/Josuerinho/AWS_autoshutdown/main/automatic_shutdown_AWS_EC2_instances_script_deploy.sh -o /root/.autoshtdown.sh
@@ -18,7 +18,7 @@ curl https://raw.githubusercontent.com/Josuerinho/AWS_autoshutdown/main/automati
 sudo chmod 700 /root/.autoshtdown.sh
 
 # Cron job syntax
-(echo "*/15 * * * * sudo /root/.autoshtdown.sh") | sudo crontab -
+(echo "*/15 * * * * sudo /root/.autoshtdown.sh" &> /dev/null) | sudo crontab -
 
 ```
 
