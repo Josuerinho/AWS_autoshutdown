@@ -5,7 +5,6 @@ This repository includes a little script to shutdown automatically AWS instances
 The following code has to be added to the **Blank space** at the end of the **Advanced details** section:
 
 ```
-
 #!/bin/bash
 
 ## script for autoshutdown
