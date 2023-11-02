@@ -12,15 +12,15 @@ The following code has to be added to the **Blank space** at the end of the **Ad
 
 username=ubuntu
 
-echo -e "\nusername=$username\nSHELL=/bin/bash\n" >> ~/.bashrc
-source ~/.bashrc
+echo -e "\nusername=$username\nSHELL=/bin/bash\n" >> /root/.bashrc
+source /root/.bashrc
 
-curl https://raw.githubusercontent.com/Josuerinho/AWS_autoshutdown/main/automatic_shutdown_AWS_EC2_instances_script_deploy.sh -o ~/.autoshutdown.sh
+curl https://raw.githubusercontent.com/Josuerinho/AWS_autoshutdown/main/automatic_shutdown_AWS_EC2_instances_script_deploy.sh -o /root/.autoshutdown.sh
 
 sudo chmod 700 ~/.autoshutdown.sh
 
 # Cron job syntax
-(echo "*/15 * * * * sudo /home/$username/.autoshutdown.sh" &> /dev/null) | sudo crontab -
+(echo "*/15 * * * * /root/.autoshutdown.sh" &> /dev/null) | crontab -
 
 ```
 
