@@ -19,8 +19,9 @@ curl https://raw.githubusercontent.com/Josuerinho/AWS_autoshutdown/main/automati
 
 sudo chmod 700 ~/.autoshutdown.sh
 
-# Cron job syntax
-(echo "*/15 * * * * /root/.autoshutdown.sh" &> /dev/null) | sudo crontab -u root -
+# Cron job syntax to Display the current crontab for the root user and append the new line
+(echo "$(sudo crontab -u root -l)" && echo "*/15 * * * * /root/.autoshutdown.sh" &> /dev/null) | sudo crontab -u root -
+
 
 ```
 
