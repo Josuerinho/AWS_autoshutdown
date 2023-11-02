@@ -4,10 +4,13 @@ This repository includes a little script to shutdown automatically AWS instances
 
 For this script to work, you need to look for the **Advanced details** section at the end of AWS EC2 instance launch section:
 
-![alt text](AWS_pics/AWS_instance_launch_pic1.png)
+![AWS pic1](AWS_pics/AWS_instance_launch_pic1.png)
 
+Once, inside, got to the end of the **Advanced details** section. There should be a big **Blank space** where you can paste text:
 
-The following code has to be added to the **Blank space** at the end of the **Advanced details** section:
+![AWS pic1](AWS_pics/AWS_instance_launch_pic2.png)
+
+The following code has to be added to this **Blank space** (just copy/paste it):
 
 ```
 #!/bin/bash
